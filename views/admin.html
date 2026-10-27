@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Administration - Skyboom Attendance</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body class="admin">
+  <div class="topbar"><button id="menu" aria-label="Open menu">Menu</button><b>Skyboom Attendance</b></div>
+  <div class="shell">
+    <aside class="sidebar" id="side">
+      <div class="brand">
+        <div class="brand-text">Skyboom Ghana Limited<small>Attendance</small></div>
+        <button class="icon-btn" id="collapse" type="button" aria-label="Collapse sidebar" aria-expanded="true" title="Collapse sidebar">
+          <svg class="ic ic-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+      </div>
+      <nav class="nav" id="nav" aria-label="Main"></nav>
+      <div class="who"><div id="who"></div><button class="small" id="logout">Log out</button></div>
+    </aside>
+    <main class="main" id="main"><div class="loading">Loading...</div></main>
+  </div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>

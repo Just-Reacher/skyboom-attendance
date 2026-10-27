@@ -1,0 +1,33 @@
+.login-page{display:grid;grid-template-columns:minmax(320px,5fr) 6fr;min-height:100vh}
+
+/* brand panel */
+.login-brand{background:var(--navy);color:var(--white);padding:2.5rem 3rem;display:flex;flex-direction:column;justify-content:space-between;border-right:6px solid var(--salmon)}
+.login-logo,.login-mobile-logo{font-weight:700;font-size:1.2rem;text-decoration:none;display:flex;flex-direction:column;line-height:1.25;border-left:4px solid var(--salmon);padding-left:.7rem;width:fit-content}
+.login-logo{color:var(--white)}
+.login-logo small,.login-mobile-logo small{font-weight:400;font-size:.78rem;opacity:.8}
+.login-pitch h2{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.2;margin:0 0 1.5rem;color:var(--white)}
+.login-pitch ul{list-style:none;margin:0;padding:0;display:grid;gap:.8rem}
+.login-pitch li{padding-left:1.8rem;position:relative;color:#d3dbe8}
+.login-pitch li::before{content:"";position:absolute;left:0;top:.7em;width:1rem;height:3px;background:var(--salmon)}
+.login-foot{margin:0;font-size:.85rem;color:#9fb0c8}
+
+/* form side */
+.login-main{display:grid;place-items:center;padding:2rem 1.25rem;background:var(--white)}
+.login-box{width:min(400px,100%)}
+.login-box h1{font-size:1.75rem;margin:0 0 .4rem}
+.login-sub{margin:0 0 1.75rem;color:var(--navy-80)}
+.login-box .field{margin-bottom:1.1rem}
+.login-box input{padding:.75rem .85rem;font-size:1rem}
+.login-box input:focus{border-color:var(--navy);outline:3px solid var(--salmon);outline-offset:0}
+.login-submit{width:100%;padding:.85rem 1rem;font-size:1.05rem;font-weight:600;margin-top:.4rem}
+.login-box .err{min-height:1.4em;margin:.2rem 0 .4rem}
+.login-help{margin:1.5rem 0 .5rem;font-size:.9rem;color:var(--navy-80);padding-top:1.25rem;border-top:1px solid var(--line)}
+.login-back{margin:0;font-size:.9rem}
+.login-mobile-logo{display:none;color:var(--navy);margin-bottom:1.75rem}
+
+@media(max-width:860px){
+  .login-page{grid-template-columns:1fr}
+  .login-brand{display:none}
+  .login-mobile-logo{display:flex}
+  .login-main{align-items:start;padding-top:2.5rem}
+}

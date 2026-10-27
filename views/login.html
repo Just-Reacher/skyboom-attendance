@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Log in - Skyboom Attendance</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/login.css">
+</head>
+<body>
+  <div class="login-page">
+
+    <aside class="login-brand" aria-label="Skyboom Ghana Limited">
+      <a class="login-logo" href="/">Skyboom Ghana Limited<small>Staff attendance</small></a>
+      <div class="login-pitch">
+        <h2>Attendance, recorded accurately and securely.</h2>
+        <ul>
+          <li>Check in and out at the approved office location</li>
+          <li>Times are set by the server in Ghana time</li>
+          <li>View your own attendance history anytime</li>
+        </ul>
+      </div>
+      <p class="login-foot">&copy; Skyboom Ghana Limited</p>
+    </aside>
+
+    <main class="login-main">
+      <div class="login-box">
+        <a class="login-mobile-logo" href="/">Skyboom Ghana Limited<small>Staff attendance</small></a>
+        <h1>Welcome back</h1>
+        <p class="login-sub">Log in with the account your administrator gave you.</p>
+
+        <form id="f" novalidate>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" type="email" autocomplete="username" placeholder="you@skyboom.com" required>
+          </div>
+          <div class="field">
+            <label for="pw">Password</label>
+            <input id="pw" type="password" autocomplete="current-password" required>
+          </div>
+          <div class="err" id="err" role="alert"></div>
+          <button class="primary login-submit" id="go" type="submit">Log in</button>
+        </form>
+
+        <p class="login-help">Forgot your password? Ask an administrator to reset it for you.</p>
+        <p class="login-back"><a href="/">&larr; Back to home</a></p>
+      </div>
+    </main>
+
+  </div>
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/login.js"></script>
+</body>
+</html>
