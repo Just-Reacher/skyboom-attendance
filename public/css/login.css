@@ -25,6 +25,32 @@
 .login-back{margin:0;font-size:.9rem}
 .login-mobile-logo{display:none;color:var(--navy);margin-bottom:1.75rem}
 
+.pw-wrap {
+  position: relative;
+}
+.pw-wrap input {
+  width: 100%;
+  padding-right: 4.5rem; /* room for the toggle button */
+}
+.pw-toggle {
+  position: absolute;
+  top: 50%;
+  right: .5rem;
+  transform: translateY(-50%);
+  background: none;
+  border: 0;
+  padding: .35rem .5rem;
+  font: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  color: inherit;
+  opacity: .7;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.pw-toggle:hover { opacity: 1; }
+.pw-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
 @media(max-width:860px){
   .login-page{grid-template-columns:1fr}
   .login-brand{display:none}
