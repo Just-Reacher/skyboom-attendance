@@ -227,3 +227,49 @@
   };
   startRouter(routes, 'dashboard');
 })().catch((e) => { document.body.innerHTML = `<p class="main">${esc(e.message)}</p>`; });
+
+// Show/hide toggle for every password input, including ones created later (modals)
+(function () {
+  function enhance(input) {
+    if (input.dataset.pwToggle || input.closest('.pw-wrap')) return;
+    input.dataset.pwToggle = '1';
+    var hadFocus = document.activeElement === input;
+
+    var wrap = document.createElement('div');
+    wrap.className = 'pw-wrap';
+    input.parentNode.insertBefore(wrap, input);
+    wrap.appendChild(input);
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'pw-toggle';
+    btn.textContent = 'Show';
+    btn.setAttribute('aria-label', 'Show password');
+    btn.setAttribute('aria-pressed', 'false');
+    if (input.id) btn.setAttribute('aria-controls', input.id);
+    wrap.appendChild(btn);
+
+    btn.addEventListener('click', function () {
+      var show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      btn.textContent = show ? 'Hide' : 'Show';
+      btn.setAttribute('aria-pressed', String(show));
+      btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+      input.focus();
+    });
+
+    if (hadFocus) input.focus(); // moving the input in the DOM can drop focus
+  }
+
+  function scan(root) {
+    if (root.matches && root.matches('input[type="password"]')) enhance(root);
+    if (root.querySelectorAll) root.querySelectorAll('input[type="password"]').forEach(enhance);
+  }
+
+  scan(document);
+  new MutationObserver(function (muts) {
+    muts.forEach(function (m) {
+      m.addedNodes.forEach(function (n) { if (n.nodeType === 1) scan(n); });
+    });
+  }).observe(document.body, { childList: true, subtree: true });
+})();

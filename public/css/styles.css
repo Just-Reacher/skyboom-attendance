@@ -84,4 +84,13 @@ dialog::backdrop{background:rgba(11,31,58,.55)}
 /* sidebar extras */
 .sidebar .who .muted{color:#c9d3e3}
 .sidebar .who button{margin-top:.5rem}
+
+/* show/hide password toggle (admin profile, admin modals, staff pages) */
+.pw-wrap{position:relative}
+.pw-wrap input,.field .pw-wrap input{width:100%;padding-right:4.5rem}
+.pw-toggle,.authcard .pw-toggle,.field .pw-toggle{position:absolute;top:50%;right:.5rem;transform:translateY(-50%);width:auto;min-height:0;margin:0;padding:.35rem .5rem;background:none;border:0;box-shadow:none;font:inherit;font-size:.85rem;font-weight:600;color:var(--navy);opacity:.7;cursor:pointer;border-radius:4px}
+.pw-toggle:hover{opacity:1;background:none}
+.pw-toggle:focus-visible{outline:2px solid var(--salmon);outline-offset:2px}
+dialog .pw-toggle{right:.4rem}
+
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
